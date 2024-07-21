@@ -8,14 +8,19 @@ import "./App.css";
 function App() {
   const [selectedChart, setSelectedChart] = useState("chart");
 
+  // Determine text color based on selected chart
+  const textColor = selectedChart === "TreeChart" ? "#FFFFFF" : "#333333";
+  const subTextColor = selectedChart === "TreeChart" ? "#FFFFFF" : "#595959";
+
   return (
     <main className="App">
       <h1
         style={{
           position: "fixed",
           left: "5vh",
-          color: "#333333",
+          color: textColor,
           fontSize: "35px",
+          zIndex: "10",
         }}
       >
         UAE Knowledge graph
@@ -25,8 +30,9 @@ function App() {
           position: "fixed",
           top: "6vh",
           left: "5vh",
-          color: "#595959",
+          color: subTextColor,
           fontSize: "17px",
+          zIndex: "10",
         }}
       >
         Interactive Hierarchical Visualization of UAE&apos;s Cities, Industries,
@@ -38,32 +44,24 @@ function App() {
           onClick={() => setSelectedChart("chart")}
           style={{ margin: "10px", padding: "10px", cursor: "pointer" }}
         >
-          Force-Directed Tree
-        </button>
-        <button
-          onClick={() => setSelectedChart("GraphChart")}
-          style={{ margin: "10px", padding: "10px", cursor: "pointer" }}
-        >
-          Show GraphChart
+          Knowledge Graph
         </button>
         <button
           onClick={() => setSelectedChart("TreeChart")}
           style={{ margin: "10px", padding: "10px", cursor: "pointer" }}
         >
-          Show TreeChart
+          Graph Chart
         </button>
         <button
-          onClick={() => setSelectedChart("LesMiserablesGraph")}
+          onClick={() => setSelectedChart("GraphChart")}
           style={{ margin: "10px", padding: "10px", cursor: "pointer" }}
         >
-          Show LesMiserablesGraph
+          Knowledge Tree Map
         </button>
       </div>
 
       {selectedChart === "chart" && <AmChartComponent />}
-
       {selectedChart === "TreeChart" && <TreeChart />}
-      {selectedChart === "LesMiserablesGraph" && <LesMiserablesGraph />}
       {selectedChart === "GraphChart" && <GraphChart />}
     </main>
   );

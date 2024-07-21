@@ -43,6 +43,10 @@ const TreeChart = () => {
             },
           },
         ],
+        lineStyle: {
+          color: "source",
+          curveness: 0.3,
+        },
       });
     });
 
