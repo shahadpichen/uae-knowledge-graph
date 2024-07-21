@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+.option {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin-top: 12vh;
+  left: 2vw;
+  z-index: 10;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

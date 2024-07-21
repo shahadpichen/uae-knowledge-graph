@@ -27,7 +27,7 @@ const AmChartComponent = () => {
         singleBranchOnly: false,
         downDepth: 1,
         topDepth: 0,
-        initialDepth: 0,
+        initialDepth: 2,
         valueField: "value",
         categoryField: "name",
         childDataField: "children",
@@ -61,33 +61,7 @@ const AmChartComponent = () => {
     };
   }, []);
 
-  return (
-    <div id="chartdiv" style={{ width: "100%", height: "100vh" }}>
-      <h1
-        style={{
-          position: "fixed",
-          top: "2vh",
-          left: "2vh",
-          color: "white",
-          fontSize: "35px",
-        }}
-      >
-        UAE Knowledge graph
-      </h1>
-      <h2
-        style={{
-          position: "fixed",
-          top: "8vh",
-          left: "2vh",
-          color: "lightgray",
-          fontSize: "17px",
-        }}
-      >
-        Interactive Hierarchical Visualization of UAE&apos;s Cities, Industries,
-        and Landmarks
-      </h2>
-    </div>
-  );
+  return <div id="chartdiv" style={{ width: "100%", height: "100vh" }}></div>;
 };
 
 export default AmChartComponent;
